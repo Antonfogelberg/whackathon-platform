@@ -1,5 +1,6 @@
 defmodule WhackathonPlatformWeb.Router do
   use WhackathonPlatformWeb, :router
+  use Pow.Phoenix.Router
 
   pipeline :browser do
     plug :accepts, ["html"]
@@ -14,8 +15,21 @@ defmodule WhackathonPlatformWeb.Router do
     plug :accepts, ["json"]
   end
 
-  scope "/", WhackathonPlatformWeb do
+# Pow authentication
+  pipeline :protected do
+    plug Pow.Plug.RequireAuthenticated,
+      error_handler: Pow.Phoenix.PlugErrorHandler
+  end
+
+  scope "/" do
     pipe_through :browser
+
+    pow_routes()
+  end
+
+
+  scope "/", WhackathonPlatformWeb do
+    pipe_through [:browser, :protected]
 
     live "/", PageLive, :index
   end
@@ -38,6 +52,7 @@ defmodule WhackathonPlatformWeb.Router do
     scope "/" do
       pipe_through :browser
       live_dashboard "/dashboard", metrics: WhackathonPlatformWeb.Telemetry
+      pow_routes()
     end
   end
 end
