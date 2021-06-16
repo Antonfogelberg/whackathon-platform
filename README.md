@@ -1,5 +1,16 @@
 # WhackathonPlatform
 
+
+### Requirements
+[Erlang](https://www.erlang.org/) 
+[Elixir](https://elixir-lang.org/install.html)
+[PostgreSQL](https://www.postgresql.org/)
+[Node.js](https://nodejs.org/en/download/)
+
+
+
+### Install
+
 To start your Phoenix server:
 
   * Install dependencies with `mix deps.get`
