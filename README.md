@@ -1,4 +1,4 @@
-# WhackathonPlatform
+# Whackathon Platform
 
 
 ### Requirements
