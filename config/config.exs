@@ -33,4 +33,5 @@ import_config "#{Mix.env()}.exs"
 
 config :whackathon_platform, :pow,
   user: WhackathonPlatform.Users.User,
-  repo: WhackathonPlatform.Repo
+  repo: WhackathonPlatform.Repo,
+  web_module: WhackathonPlatformWeb
