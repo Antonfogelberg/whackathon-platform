@@ -33,4 +33,8 @@ import_config "#{Mix.env()}.exs"
 
 config :whackathon_platform, :pow,
   user: WhackathonPlatform.Users.User,
-  repo: WhackathonPlatform.Repo
+  repo: WhackathonPlatform.Repo,
+  web_module: WhackathonPlatformWeb,
+  extensions: [PowResetPassword],
+  controller_callbacks: Pow.Extension.Phoenix.ControllerCallbacks,
+  mailer_backend: WhackathonPlatformWeb.PowMailer
