@@ -1,6 +1,8 @@
 defmodule WhackathonPlatformWeb.Router do
   use WhackathonPlatformWeb, :router
   use Pow.Phoenix.Router
+  use Pow.Extension.Phoenix.Router,
+    extensions: [PowResetPassword]
 
   pipeline :browser do
     plug :accepts, ["html"]
@@ -25,6 +27,7 @@ defmodule WhackathonPlatformWeb.Router do
     pipe_through :browser
 
     pow_routes()
+    pow_extension_routes()
   end
 
 
