@@ -11,7 +11,7 @@
         <%= @email %>
         </br>
         <%= @username %>
-        <%= if @current_user.email == @email do%>
+        <%= if @current_user.email == @email do %>
         </br>
         <p>This is my own page</p>
         <% end %>
