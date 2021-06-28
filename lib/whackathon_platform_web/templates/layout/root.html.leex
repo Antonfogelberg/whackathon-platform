@@ -9,11 +9,11 @@
     <link phx-track-static rel="stylesheet" href="<%= Routes.static_path(@conn, "/css/app.css") %>"/>
     <script defer phx-track-static type="text/javascript" src="<%= Routes.static_path(@conn, "/js/app.js") %>"></script>
   </head>
-  <body>
-    <header>
-      <section class="container">
+  <body class="bg-blue-800">
+    <header class="bg-blue-900">
+      <section class="flex justify-between space-around pr-12 pl-12 pt-6 pb-6 font-mono text-gray-300">
         <nav role="navigation">
-          <ul>
+          <ul class="">
             <%= if Pow.Plug.current_user(@conn) do %>
             <li>
               <%= @current_user.email %>
@@ -29,12 +29,9 @@
               <%= link "Sign in", to: Routes.pow_session_path(@conn, :new) %>
             </li>
             <% end %>
-
           </ul>
         </nav>
-        <a href="https://phoenixframework.org/" class="phx-logo">
-          <img src="<%= Routes.static_path(@conn, "/images/phoenix.png") %>" alt="Phoenix Framework Logo"/>
-        </a>
+      <a href="/" class="text-5xl">Whack</a>
       </section>
     </header>
     <%= @inner_content %>
