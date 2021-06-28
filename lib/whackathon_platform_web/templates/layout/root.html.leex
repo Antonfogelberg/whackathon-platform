@@ -16,7 +16,7 @@
           <ul class="">
             <%= if Pow.Plug.current_user(@conn) do %>
             <li>
-              <%= @current_user.email %>
+              <%= link @current_user.username, to: Routes.user_path(@conn, :show, @current_user.username) %>
             </li>
             <li>
               <%= link "Sign out", to: Routes.pow_session_path(@conn, :delete), method: :delete %>
