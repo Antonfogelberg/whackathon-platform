@@ -9,6 +9,12 @@
     <figcaption class="font-medium">
       <div class="text-cyan-600">
         <%= @email %>
+        </br>
+        <%= @username %>
+        <%= if @current_user.email == @email do%>
+        </br>
+        <p>This is my own page</p>
+        <% end %>
       </div>
       <div class="text-gray-500">
         Software Engineer, Whackathon Platform
