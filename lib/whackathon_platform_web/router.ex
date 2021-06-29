@@ -51,6 +51,7 @@ defmodule WhackathonPlatformWeb.Router do
     pipe_through [:browser, :protected]
 
     live "/", PageLive, :index
+    resources "/users", UserController, only: [:show]
   end
 
   # Other scopes may use custom stacks.
