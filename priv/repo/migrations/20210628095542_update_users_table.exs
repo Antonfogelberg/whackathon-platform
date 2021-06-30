@@ -4,6 +4,7 @@ defmodule WhackathonPlatform.Repo.Migrations.UpdateUsersTable do
   def change do
     alter table(:users) do
       add :username, :string
+      add :bio, :string
     end
   end
 end
