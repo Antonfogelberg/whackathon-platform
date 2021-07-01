@@ -1,45 +1,44 @@
 <div class="flex flex-row">
-<div class="w-3/12">
-  <figure class="bg-gray-100 rounded-xl mr-5">
-    <img class="rounded-xl"
-      src="<%= Routes.static_path(@conn, "/images/profile_picture_placeholder.png") %>" alt=""
-      width="150" height="150" />
-    <div class="m-5">
-      <figcaption class="">
-        <div class="text-cyan-600">
-          <p class="text-5xl">
-            <%= @username %>
-          </p>
-          <%= if @current_user.email == @email do %>
-          <p>This is my own page</p>
-          <% end %>
-        </div>
-        <div class="text-gray-500">
-          Software Engineer, Whackathon Platform
-        </div>
-      </figcaption>
-      <p class="text-3xl">
-        Bio
-      </p>
-      <%= if @current_user.bio do %>
-      <p class="text-2xl text-gray-500">
-        <%= @current_user.bio %>
-      </p>
-      <% else %>
-      <p class="text-gray-500">
-        User currently has no biography
-      </p>
-      <p class="text-gray-500">
-        Creativity is a fucking work-ethic. Defy fucking convention.
-        If you don’t test your will against the dissent of the world,
-        it can never grow stronger. Never let your guard down by thinking
-        you’re fucking good enough. There is no right fucking answer. The
-        splendor of the mystery is that you don’t understand. Keep fucking
-        going.
-      </p>
-      <% end %>
-    </div>
-  </figure>
+  <div class="w-3/12">
+    <figure class="bg-gray-100 rounded-xl mr-5">
+      <img class="rounded-xl" src="<%= Routes.static_path(@conn, "/images/profile_picture_placeholder.png") %>" alt=""
+        width="150" height="150" />
+      <div class="m-5">
+        <figcaption class="">
+          <div class="text-cyan-600">
+            <p class="text-5xl">
+              <%= @username %>
+            </p>
+            <%= if @current_user.email == @email do %>
+            <p>This is my own page</p>
+            <% end %>
+          </div>
+          <div class="text-gray-500">
+            Software Engineer, Whackathon Platform
+          </div>
+        </figcaption>
+        <p class="text-3xl">
+          Bio
+        </p>
+        <%= if @current_user.bio do %>
+        <p class="text-2xl text-gray-500">
+          <%= @current_user.bio %>
+        </p>
+        <% else %>
+        <p class="text-gray-500">
+          User currently has no biography
+        </p>
+        <p class="text-gray-500">
+          Creativity is a fucking work-ethic. Defy fucking convention.
+          If you don’t test your will against the dissent of the world,
+          it can never grow stronger. Never let your guard down by thinking
+          you’re fucking good enough. There is no right fucking answer. The
+          splendor of the mystery is that you don’t understand. Keep fucking
+          going.
+        </p>
+        <% end %>
+      </div>
+    </figure>
   </div>
   <div class="flex flex-col ml-5 w-9/12">
     <p>Lite text bara</p>
