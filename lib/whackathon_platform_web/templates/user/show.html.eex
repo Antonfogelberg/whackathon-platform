@@ -38,6 +38,16 @@
         </p>
         <% end %>
       </div>
+      <%= if @current_user.email == @email do %>
+      <div class="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-center">
+        <div class="rounded-md shadow">
+          <a href="<%= Routes.pow_registration_path(@conn, :edit) %>"
+            class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 md:py-4 md:text-lg md:px-10">
+            Edit profile
+          </a>
+        </div>
+      </div>
+      <% end %>
     </figure>
   </div>
   <div class="flex flex-col ml-5 w-9/12">
