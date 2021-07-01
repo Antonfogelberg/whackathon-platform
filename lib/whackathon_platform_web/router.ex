@@ -50,7 +50,8 @@ defmodule WhackathonPlatformWeb.Router do
   scope "/", WhackathonPlatformWeb do
     pipe_through [:browser, :protected]
 
-    live "/", PageLive, :index
+    # live "/", PageLive, :index
+    get "/", PageController, :index
     resources "/users", UserController, only: [:show]
   end
 
