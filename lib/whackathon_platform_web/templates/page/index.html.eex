@@ -8,26 +8,26 @@
   </div>
   <div class="container relative mx-auto" data-aos="fade-in" data-aos-delay="500">
     <h1 class="text-4xl tracking-tight font-extrabold text-white sm:text-5xl md:text-6xl">
-      <span class="block xl:inline">Välkommen till</span>
+      <span class="block xl:inline">Welcome to</span>
       <span class="block text-purple-500 xl:inline">whackathon platform</span>
     </h1>
     <p class="mt-3 text-base text-gray-500 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0">
-      Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo. Elit sunt amet fugiat
-      veniam occaecat fugiat aliqua.
+       A project sharing platform to inspire, learn and motivate promising
+       <span class="text-purple-500 ">programming heroes</span>
     </p>
     <div class="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start">
       <div class="rounded-md shadow">
         <a href="#"
           class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 md:py-4 md:text-lg md:px-10">
-          Placeholder button 1
+          Sign in
         </a>
       </div>
-      <div class="mt-3 sm:mt-0 sm:ml-3">
+      <%# <div class="mt-3 sm:mt-0 sm:ml-3">
         <a href="#"
           class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-indigo-700 bg-indigo-100 hover:bg-indigo-200 md:py-4 md:text-lg md:px-10">
-          Placeholder button 2
+            Register
         </a>
-      </div>
+      </div> %>
     </div>
   </div>
 </div>
@@ -38,27 +38,27 @@
     <div class="items-center flex flex-wrap">
       <div class="w-full md:w-4/12 ml-auto mr-auto px-4" data-aos="fade-right">
         <img alt="..." class="max-w-full rounded-lg shadow-lg"
-          src="https://images.unsplash.com/photo-1550345332-09e3ac987658?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80" />
+          src="https://images.unsplash.com/photo-1607799279861-4dd421887fb3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2100&q=80" />
       </div>
       <div class="w-full md:w-5/12 ml-auto mr-auto px-4" data-aos="fade-left">
         <div class="md:pr-12">
-          <small class="text-orange-500">About our gym</small>
-          <h3 class="text-4xl uppercase font-bold">Safe Body Building</h3>
+          <small class="text-orange-500">About whackathon</small>
+          <h3 class="text-4xl uppercase font-bold">Relaxed learning environment</h3>
           <p class="mt-4 text-lg leading-relaxed">
-            The extension comes with three pre-built pages to help you get
-            started faster. You can change the text and images and you're
-            good to go.
+            What sets Whackathon apart from other 'Hackathons' is that there is no company behind it
+            trying to scalp talents or save the world.
+            <br>Just come along and build what you want to build!
           </p>
           <ul class="list-none mt-6">
             <li class="py-2">
               <div class="flex items-center">
                 <div>
                   <span class="font-semibold inline-block py-3 mr-3 text-orange-500"><i
-                      class="fas fa-dumbbell fa-2x"></i></span>
+                      class="fas fa-code fa-2x"></i></span>
                 </div>
                 <div>
                   <h4 class="text-xl">
-                    The latest & greatest gym equipment
+                    Prestigeless crowd with no requirements
                   </h4>
                 </div>
               </div>
@@ -67,11 +67,11 @@
               <div class="flex items-center">
                 <div>
                   <span class="font-semibold inline-block py-3 mr-3 text-orange-500"><i
-                      class="fas fa-hard-hat fa-2x"></i></span>
+                      class="fas fa-chalkboard-teacher fa-2x"></i></span>
                 </div>
                 <div>
                   <h4 class="text-xl">
-                    5-inch, quality foam floor padding
+                    Learn from others and get inspired
                   </h4>
                 </div>
               </div>
@@ -83,7 +83,7 @@
                       class="fas fa-users fa-2x"></i></span>
                 </div>
                 <div>
-                  <h4 class="text-xl">3 professional trainers</h4>
+                  <h4 class="text-xl">Go solo or team up</h4>
                 </div>
               </div>
             </li>
@@ -100,11 +100,10 @@
     <div class="flex flex-wrap justify-center text-center mb-24">
       <div class="w-full lg:w-6/12 px-4">
         <h2 class="text-4xl font-semibold uppercase">
-          Meet Our Trainers
+         Featured projects
         </h2>
         <p class="text-lg leading-relaxed m-4">
-          Our trainers are are here to dedicate the time and effort that
-          you need to get in the best shape of your life
+         A few samples of projects done during previous Whackathon events
         </p>
       </div>
     </div>
@@ -114,12 +113,12 @@
       <div class="w-full md:w-4/12 lg:mb-0 mb-12 px-4" data-aos="flip-right">
         <div class="px-6">
           <img alt="..."
-            src="https://images.unsplash.com/photo-1597347343908-2937e7dcc560?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80"
+            src="https://images.unsplash.com/photo-1570303345338-e1f0eddf4946?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1265&q=80"
             class="shadow-lg rounded max-w-full mx-auto" style="max-width: 250px" />
           <div class="pt-6 text-center">
-            <h5 class="text-xl font-bold">Mr Rogers</h5>
+            <h5 class="text-xl font-bold">RNG Dice</h5>
             <p class="mt-1 text-sm text-gray-500 uppercase font-semibold">
-              Neighborhood Watchman
+              Siiihiimon
             </p>
           </div>
         </div>
@@ -128,12 +127,12 @@
       <div class="w-full md:w-4/12 lg:mb-0 mb-12 px-4" data-aos="flip-right">
         <div class="px-6">
           <img alt="..."
-            src="https://images.unsplash.com/photo-1594381898411-846e7d193883?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
+            src="https://images.unsplash.com/photo-1594316663037-23fffae0d4e7?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
             class="shadow-lg rounded max-w-full mx-auto" style="max-width: 250px" />
           <div class="pt-6 text-center">
-            <h5 class="text-xl font-bold">Strawberry Shortcake</h5>
+            <h5 class="text-xl font-bold">Is this your card generator?</h5>
             <p class="mt-1 text-sm text-gray-500 uppercase font-semibold">
-              Cupcake Smasher
+              Albin chrooon
             </p>
           </div>
         </div>
@@ -142,79 +141,13 @@
       <div class="w-full md:w-4/12 lg:mb-0 mb-12 px-4" data-aos="flip-right">
         <div class="px-6">
           <img alt="..."
-            src="https://images.unsplash.com/photo-1567013127542-490d757e51fc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80"
+            src="https://images.unsplash.com/photo-1555864400-cc47dd93d427?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=635&q=80"
             class="shadow-lg rounded max-w-full mx-auto" style="max-width: 250px" />
           <div class="pt-6 text-center">
-            <h5 class="text-xl font-bold">Ronald McDonald</h5>
+            <h5 class="text-xl font-bold">Game boy emulator</h5>
             <p class="mt-1 text-sm text-gray-500 uppercase font-semibold">
-              Double Whoopass With Cheese
+              Sara Liljefoerz
             </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Contact Header Section -->
-<section class="pb-20 relative block bg-black text-white">
-  <div class="bottom-auto top-0 left-0 right-0 w-full absolute pointer-events-none overflow-hidden -mt-20"
-    style="height: 80px; transform: translateZ(0px)">
-    <svg class="absolute bottom-0 overflow-hidden" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"
-      version="1.1" viewBox="0 0 2560 100" x="0" y="0">
-      <polygon points="2560 0 2560 100 0 100"></polygon>
-    </svg>
-  </div>
-  <div class="container mx-auto px-4 lg:pt-24 lg:pb-64 pb-20 pt-20">
-    <div class="flex flex-wrap text-center justify-center">
-      <div class="w-full lg:w-6/12 px-4">
-        <h2 class="text-4xl font-semibold text-white uppercase">
-          Contact Us
-        </h2>
-        <p class="text-lg leading-relaxed mt-4 mb-4">
-          Contact us to ask any questions, aquire a membership, talk to
-          our trainers or anything else
-        </p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Contact Form -->
-<section class="relative block py-24 lg:pt-0 bg-black">
-  <div class="container mx-auto px-4">
-    <div class="flex flex-wrap justify-center lg:-mt-64 -mt-48">
-      <div class="w-full lg:w-6/12 px-4">
-        <div class="relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded-lg bg-gray-300"
-          data-aos="fade-up-right">
-          <div class="flex-auto p-5 lg:p-10 bg-orange-500 text-white">
-            <h4 class="text-2xl font-semibold">Want to work with us?</h4>
-            <p class="leading-relaxed mt-1 mb-4">
-              Complete this form and we will get back to you in 24 hours.
-            </p>
-            <div class="relative w-full mb-3 mt-8">
-              <label class="block uppercase text-xs font-bold mb-2" for="full-name">Full Name</label><input type="text"
-                class="px-3 py-3 placeholder-gray-400 bg-white rounded text-sm shadow focus:outline-none focus:shadow-outline w-full"
-                placeholder="Full Name" style="transition: all 0.15s ease 0s" />
-            </div>
-            <div class="relative w-full mb-3">
-              <label class="block uppercase text-xs font-bold mb-2" for="email">Email</label><input type="email"
-                class="px-3 py-3 placeholder-gray-400 bg-white rounded text-sm shadow focus:outline-none focus:shadow-outline w-full"
-                placeholder="Email" style="transition: all 0.15s ease 0s" />
-            </div>
-            <div class="relative w-full mb-3">
-              <label class="block uppercase text-xs font-bold mb-2" for="message">Message</label><textarea rows="4"
-                cols="80"
-                class="px-3 py-3 placeholder-gray-400 bg-white rounded text-sm shadow focus:outline-none focus:shadow-outline w-full"
-                placeholder="Type a message..."></textarea>
-            </div>
-            <div class="text-center mt-6">
-              <button
-                class="bg-gray-900 text-white active:bg-gray-700 text-sm font-bold uppercase px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1"
-                type="button" style="transition: all 0.15s ease 0s">
-                Send Message
-              </button>
-            </div>
           </div>
         </div>
       </div>
@@ -223,32 +156,27 @@
 </section>
 
 <!-- Footer -->
-<footer class="relative bg-gray-300 pt-8 pb-6">
+<footer class="relative bg-indigo-500 pt-8 pb-6">
   <div class="bottom-auto top-0 left-0 right-0 w-full absolute pointer-events-none overflow-hidden -mt-20"
     style="height: 80px; transform: translateZ(0px)">
     <svg class="absolute bottom-0 overflow-hidden" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"
       version="1.1" viewBox="0 0 2560 100" x="0" y="0">
-      <polygon class="text-gray-300 fill-current" points="2560 0 2560 100 0 100"></polygon>
+      <polygon class="text-indigo-500 fill-current" points="2560 0 2560 100 0 100"></polygon>
     </svg>
   </div>
   <div class="container mx-auto px-4">
     <div class="flex flex-wrap">
       <div class="w-full lg:w-6/12 px-4">
-        <h4 class="text-3xl font-semibold">Follow us on social media</h4>
+        <h4 class="text-3xl font-semibold"></h4>
         <h5 class="text-lg mt-0 mb-2 text-gray-700">
-          Find us on any of these platforms, we respond 1-2 business days.
+          Whackathon platform was made during the summer of 2021 by two computer science students who wanted to learn the PETAL stack. <br>
+
         </h5>
         <div class="mt-6">
           <button
-            class="bg-white text-blue-400 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2 p-3"
+            class= "bg-white text-black-400 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2 p-3"
             type="button">
-            <i class="flex fab fa-twitter text-orange-500"></i></button><button
-            class="bg-white text-blue-600 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2 p-3"
-            type="button">
-            <i class="flex fab fa-facebook-square text-orange-500"></i></button><button
-            class="bg-white text-pink-400 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2 p-3"
-            type="button">
-            <i class="flex fab fa-linkedin text-orange-500"></i>
+            <i class="flex fab fa-github"></i></button><button
           </button>
         </div>
       </div>
@@ -257,7 +185,7 @@
     <div class="flex flex-wrap items-center md:justify-between justify-center">
       <div class="w-full md:w-4/12 px-4 mx-auto text-center">
         <div class="text-sm text-gray-600 font-semibold py-1">
-          Copyright © The Power Room
+          Copyright © Whackathon platform
         </div>
       </div>
     </div>
