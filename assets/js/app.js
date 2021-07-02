@@ -12,11 +12,15 @@ import "../css/app.scss";
 //     import {Socket} from "phoenix"
 //     import socket from "./socket"
 //
-import "./helpers";
+
+import { toggleNavbar } from "./helpers";
 import "phoenix_html";
 import { Socket } from "phoenix";
 import topbar from "topbar";
 import { LiveSocket } from "phoenix_live_view";
+import Alpine from "alpinejs";
+
+window.Alpine = Alpine;
 
 let csrfToken = document
   .querySelector("meta[name='csrf-token']")
@@ -38,3 +42,5 @@ liveSocket.connect();
 // >> liveSocket.enableLatencySim(1000)  // enabled for duration of browser session
 // >> liveSocket.disableLatencySim()
 window.liveSocket = liveSocket;
+
+Alpine.start();
