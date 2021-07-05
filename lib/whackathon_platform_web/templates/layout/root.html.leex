@@ -50,11 +50,34 @@
     document.getElementById(collapseID).classList.toggle("hidden");
     document.getElementById(collapseID).classList.toggle("block");
   }
+
+  function modalLogin() {
+    return {
+      state: 'CLOSED',
+      open() {
+        this.state = 'Transition'
+        setTimeOut(() => {
+          this.state = 'OPEN'
+        }, 50)
+      },
+      close() {
+        this.state = 'TRANSITION'
+        setTimeout(() => {
+          this.state = 'CLOSED'
+        }, 300)
+      },
+      isOpen() {
+        return this.state === 'OPEN'
+      },
+      isOpening() {
+        return this.state !== 'CLOSED'
+      },
+    }
+  }
 </script>
 
 
 </html>
-
 
 <!--   Pow login show email osv
         <ul class="hidden md:block items-end">
