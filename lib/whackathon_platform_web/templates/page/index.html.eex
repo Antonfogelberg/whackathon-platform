@@ -169,8 +169,7 @@
       <div class="w-full lg:w-6/12 px-4">
         <h4 class="text-3xl font-semibold"></h4>
         <h5 class="text-lg mt-0 mb-2 text-gray-700">
-          Whackathon platform was made during the summer of 2021 by two computer science students who wanted
-          to learn the PETAL stack.
+          Whackathon platform was made during the summer of 2021 by Anton Fogelberg and Jonas Nygren och vi är så himla duktiga
 
         </h5>
         <div class="mt-6">
@@ -189,8 +188,3 @@
           </div>
         </div>
 </footer>
-<script>
-  // Enables/disables the nav menu for small/large screens
-  // For toggling the sign in modal
-  //var modal = false;
-</script>

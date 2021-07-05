@@ -11,8 +11,9 @@
   <script defer phx-track-static type="text/javascript" src="<%= Routes.static_path(@conn, "/js/app.js") %>"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&family=Tourney:ital@1&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&family=Tourney:ital@1&display=swap"
+    rel="stylesheet">
 </head>
 
 <body>
@@ -31,23 +32,12 @@
       <div class="lg:flex flex-grow items-center bg-white lg:bg-transparent lg:shadow-none hidden"
         id="example-collapse-navbar">
         <ul class="flex flex-col lg:flex-row list-none lg:ml-auto">
-          <%# <!-- Icon 1 -->
           <li class="flex items-center">
-            <a class="lg:text-white lg:hover:text-gray-300 text-gray-800 px-3 py-4 lg:py-2 flex items-center text-xs uppercase font-bold"
-              href="#pablo"><i class="text-orange-500 fab fa-facebook text-lg leading-lg"></i><span
-                class="lg:hidden inline-block ml-2">Share</span></a>
-          </li>
-          <!-- Icon 2 -->
-          <li class="flex items-center">
-            <a class="lg:text-white lg:hover:text-gray-300 text-gray-800 px-3 py-4 lg:py-2 flex items-center text-xs uppercase font-bold"
-              href="#pablo"><i class="text-orange-500 fab fa-twitter text-lg leading-lg"></i><span
-                class="lg:hidden inline-block ml-2">Tweet</span></a>
-          </li> %>
-          <!-- Icon 3 -->
-          <li class="flex items-center">
-            <a target="_blank" rel="noopener noreferrer" class="lg:text-white lg:hover:text-gray-300 text-gray-800 px-3 py-4 lg:py-2 flex items-center text-xs uppercase font-bold"
-              href="https://github.com/Antonfogelberg/whackathon-platform"><i class="text-orange-500 fab fa-github text-lg leading-lg"></i><span
-                class="lg:hidden inline-block ml-2">Profile</span></a>
+            <a target="_blank" rel="noopener noreferrer"
+              class="lg:text-white lg:hover:text-gray-300 text-gray-800 px-3 py-4 lg:py-2 flex items-center text-xs uppercase font-bold"
+              href="https://github.com/Antonfogelberg/whackathon-platform"><i
+                class="text-orange-500 fab fa-github text-lg leading-lg"></i><span
+                class="lg:hidden inline-block ml-2">Github</span></a>
           </li>
         </ul>
       </div>
@@ -55,9 +45,15 @@
   </nav>
   <%= @inner_content %>
 </body>
+<script>
+  function toggleNavbar(collapseID) {
+    document.getElementById(collapseID).classList.toggle("hidden");
+    document.getElementById(collapseID).classList.toggle("block");
+  }
+</script>
+
 
 </html>
-
 
 
 <!--   Pow login show email osv
