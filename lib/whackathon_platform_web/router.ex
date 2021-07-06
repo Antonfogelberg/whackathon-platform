@@ -24,6 +24,11 @@ defmodule WhackathonPlatformWeb.Router do
       error_handler: Pow.Phoenix.PlugErrorHandler
   end
 
+  pipeline :not_authenticated do
+    plug Pow.Plug.RequireNotAuthenticated,
+      error_handler: Pow.Phoenix.PlugErrorHandler
+  end
+
 # PowAssent for github login
   pipeline :skip_csrf_protection do
     plug :accepts, ["html"]
@@ -48,9 +53,15 @@ defmodule WhackathonPlatformWeb.Router do
 
 
   scope "/", WhackathonPlatformWeb do
+    pipe_through :browser
+
+    get "/", PageController, :index
+  end
+
+
+  scope "/", WhackathonPlatformWeb do
     pipe_through [:browser, :protected]
 
-    live "/", PageLive, :index
     resources "/users", UserController, only: [:show]
   end
 

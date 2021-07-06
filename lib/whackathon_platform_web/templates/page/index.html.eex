@@ -1,0 +1,188 @@
+<!-- Main Area -->
+<!-- Hero -->
+<div class="relative flex content-center items-center justify-center" style="min-height: 100vh">
+  <div class="absolute top-0 w-full h-full bg-top bg-cover" style="
+            background-image: url('https://images.unsplash.com/photo-1579548122080-c35fd6820ecb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3450&q=80');
+          ">
+    <span id="blackOverlay" class="w-full h-full absolute opacity-25 bg-black"></span>
+  </div>
+  <div class="container relative mx-auto" data-aos="fade-in" data-aos-delay="500">
+    <h1 class="text-4xl tracking-tight font-extrabold text-white sm:text-5xl md:text-6xl">
+      <span class="block xl:inline">Welcome to</span>
+      <span class="block text-purple-500 xl:inline">whackathon platform</span>
+    </h1>
+    <p class="mt-3 text-base text-gray-500 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0">
+      A project sharing platform to inspire, learn and motivate promising
+      <span class="text-purple-500 ">programming heroes</span>
+    </p>
+    <%= if !@current_user do %>
+    <div x-data="{ open: false }" class="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start">
+      <button x-on:click="open = !open" class="rounded-md shadow">
+        <a
+          href="<%= Routes.pow_session_path(@conn, :new) %>"
+          class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 md:py-4 md:text-lg md:px-10">
+          Sign in
+        </a>
+      </button>
+    </div>
+    <% end %>
+  </div>
+</div>
+
+<!-- About Section -->
+<section id="about" class="relative py-20 bg-black text-white">
+  <div class="container mx-auto px-4">
+    <div class="items-center flex flex-wrap">
+      <div class="w-full md:w-4/12 ml-auto mr-auto px-4" data-aos="fade-right">
+        <img alt="..." class="max-w-full rounded-lg shadow-lg"
+          src="https://images.unsplash.com/photo-1607799279861-4dd421887fb3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2100&q=80" />
+      </div>
+      <div class="w-full md:w-5/12 ml-auto mr-auto px-4" data-aos="fade-left">
+        <div class="md:pr-12">
+          <small class="text-orange-500">About whackathon</small>
+          <h3 class="text-4xl uppercase font-bold">Relaxed learning environment</h3>
+          <p class="mt-4 text-lg leading-relaxed">
+            What sets Whackathon apart from other 'Hackathons' is that there is no company behind it
+            trying to scalp talents or save the world.
+            <br>Just come along and build what you want to build!
+          </p>
+          <ul class="list-none mt-6">
+            <li class="py-2">
+              <div class="flex items-center">
+                <div>
+                  <span class="font-semibold inline-block py-3 mr-3 text-orange-500"><i
+                      class="fas fa-code fa-2x"></i></span>
+                </div>
+                <div>
+                  <h4 class="text-xl">
+                    Prestigeless crowd with no requirements
+                  </h4>
+                </div>
+              </div>
+            </li>
+            <li class="py-2">
+              <div class="flex items-center">
+                <div>
+                  <span class="font-semibold inline-block py-3 mr-3 text-orange-500"><i
+                      class="fas fa-chalkboard-teacher fa-2x"></i></span>
+                </div>
+                <div>
+                  <h4 class="text-xl">
+                    Learn from others and get inspired
+                  </h4>
+                </div>
+              </div>
+            </li>
+            <li class="py-2">
+              <div class="flex items-center">
+                <div>
+                  <span class="font-semibold inline-block py-3 mr-3 text-orange-500"><i
+                      class="fas fa-users fa-2x"></i></span>
+                </div>
+                <div>
+                  <h4 class="text-xl">Go solo or team up</h4>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Trainers Section -->
+<section class="pt-20 pb-48">
+  <div class="container mx-auto px-4">
+    <div class="flex flex-wrap justify-center text-center mb-24">
+      <div class="w-full lg:w-6/12 px-4">
+        <h2 class="text-4xl font-semibold uppercase">
+          Featured projects
+        </h2>
+        <p class="text-lg leading-relaxed m-4">
+          A few samples of projects done during previous Whackathon events
+        </p>
+      </div>
+    </div>
+    <!-- Trainer Card Wrapper -->
+    <div class="flex flex-wrap">
+      <!-- Card 1 -->
+      <div class="w-full md:w-4/12 lg:mb-0 mb-12 px-4" data-aos="flip-right">
+        <div class="px-6">
+          <img alt="..."
+            src="https://images.unsplash.com/photo-1570303345338-e1f0eddf4946?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1265&q=80"
+            class="shadow-lg rounded max-w-full mx-auto" style="max-width: 250px" />
+          <div class="pt-6 text-center">
+            <h5 class="text-xl font-bold">RNG Dice</h5>
+            <p class="mt-1 text-sm text-gray-500 uppercase font-semibold">
+              Siiihiimon
+            </p>
+          </div>
+        </div>
+      </div>
+      <!-- Card 2 -->
+      <div class="w-full md:w-4/12 lg:mb-0 mb-12 px-4" data-aos="flip-right">
+        <div class="px-6">
+          <img alt="..."
+            src="https://images.unsplash.com/photo-1594316663037-23fffae0d4e7?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+            class="shadow-lg rounded max-w-full mx-auto" style="max-width: 250px" />
+          <div class="pt-6 text-center">
+            <h5 class="text-xl font-bold">Is this your card generator?</h5>
+            <p class="mt-1 text-sm text-gray-500 uppercase font-semibold">
+              Albin chrooon
+            </p>
+          </div>
+        </div>
+      </div>
+      <!-- Card 3 -->
+      <div class="w-full md:w-4/12 lg:mb-0 mb-12 px-4" data-aos="flip-right">
+        <div class="px-6">
+          <img alt="..."
+            src="https://images.unsplash.com/photo-1555864400-cc47dd93d427?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=635&q=80"
+            class="shadow-lg rounded max-w-full mx-auto" style="max-width: 250px" />
+          <div class="pt-6 text-center">
+            <h5 class="text-xl font-bold">Game boy emulator</h5>
+            <p class="mt-1 text-sm text-gray-500 uppercase font-semibold">
+              Sara Liljefoerz
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="relative bg-indigo-500 pt-8 pb-6">
+  <div class="bottom-auto top-0 left-0 right-0 w-full absolute pointer-events-none overflow-hidden -mt-20"
+    style="height: 80px; transform: translateZ(0px)">
+    <svg class="absolute bottom-0 overflow-hidden" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"
+      version="1.1" viewBox="0 0 2560 100" x="0" y="0">
+      <polygon class="text-indigo-500 fill-current" points="4500 0 4500 100 0 100"></polygon>
+    </svg>
+  </div>
+  <div class="container mx-auto px-4">
+    <div class="flex flex-wrap">
+      <div class="w-full lg:w-6/12 px-4">
+        <h4 class="text-3xl font-semibold"></h4>
+        <h5 class="text-lg mt-0 mb-2 text-gray-700">
+          Whackathon platform was made during the summer of 2021 by Anton Fogelberg and Jonas Nygren och vi är så himla
+          duktiga
+
+        </h5>
+        <div class="mt-6">
+          <button
+            class="bg-white text-black-400 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2 p-3"
+            type="button">
+            <a target="_blank" rel="noopener noreferrer" href="https://github.com/Antonfogelberg/whackathon-platform">
+              <i class="flex fab fa-github"></i></button><button </button> </div> </div> </div> <hr
+            class="my-6 border-gray-400" />
+          <div class="flex flex-wrap items-center md:justify-between justify-center">
+            <div class="w-full md:w-4/12 px-4 mx-auto text-center">
+              <div class="text-sm text-gray-600 font-semibold py-1">
+                Copyright © Whackathon platform
+              </div>
+            </div>
+          </div>
+        </div>
+</footer>

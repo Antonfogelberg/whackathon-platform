@@ -1,39 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8"/>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <%= csrf_meta_tag() %>
-    <%= live_title_tag assigns[:page_title] || "WhackathonPlatform", suffix: " · Phoenix Framework" %>
-    <link phx-track-static rel="stylesheet" href="<%= Routes.static_path(@conn, "/css/app.css") %>"/>
-    <script defer phx-track-static type="text/javascript" src="<%= Routes.static_path(@conn, "/js/app.js") %>"></script>
-  </head>
-  <body class="bg-blue-800">
-    <header class="bg-blue-900">
-      <section class="flex justify-between space-around pr-12 pl-12 pt-6 pb-6 font-mono text-gray-300">
-        <nav role="navigation">
-          <ul class="">
-            <%= if Pow.Plug.current_user(@conn) do %>
-            <li>
-              <%= link @current_user.username, to: Routes.user_path(@conn, :show, @current_user.username) %>
-            </li>
-            <li>
-              <%= link "Sign out", to: Routes.pow_session_path(@conn, :delete), method: :delete %>
-            </li>
-          <% else %>
-            <li>
-              <%= link "Register", to: Routes.pow_registration_path(@conn, :new) %>
-            </li>
-            <li>
-              <%= link "Sign in", to: Routes.pow_session_path(@conn, :new) %>
-            </li>
-            <% end %>
-          </ul>
-        </nav>
-      <a href="/" class="text-5xl">Whack</a>
-      </section>
-    </header>
-    <%= @inner_content %>
-  </body>
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <%= csrf_meta_tag() %>
+  <%= live_title_tag assigns[:page_title] || "Whackathon Platform" %>
+  <link phx-track-static rel="stylesheet" href="<%= Routes.static_path(@conn, "/css/app.css") %>" />
+  <script defer phx-track-static type="text/javascript" src="<%= Routes.static_path(@conn, "/js/app.js") %>"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&family=Tourney:ital@1&display=swap"
+    rel="stylesheet">
+</head>
+
+<body>
+  <!-- Navbar -->
+  <nav class="top-0 absolute z-50 w-full flex flex-wrap items-center justify-between px-2 py-3 navbar-expand-lg">
+    <div class="container px-4 mx-auto flex flex-wrap items-center justify-between">
+      <div class="w-full relative flex justify-between lg:w-auto lg:static lg:block lg:justify-start">
+        <a class="text-lg font-bold leading-relaxed inline-block mr-4 py-2 whitespace-no-wrap uppercase text-white"
+          href="#">Whackathon</a>
+        <button
+          class="cursor-pointer text-xl leading-none px-3 py-1 border border-solid border-transparent rounded bg-transparent block lg:hidden outline-none focus:outline-none"
+          type="button" onclick="toggleNavbar('example-collapse-navbar')">
+          <i class="text-white fas fa-bars"></i>
+        </button>
+      </div>
+      <div class="lg:flex flex-grow items-center bg-white lg:bg-transparent lg:shadow-none hidden"
+        id="example-collapse-navbar">
+        <ul class="flex flex-col lg:flex-row list-none lg:ml-auto">
+          <%= if @current_user do %>
+          <li class="flex items-center">
+            <a class=" text-lg font bold leading-relaxed whitespace-no-wrap px-3 py-1 text-white">
+              <i class="lg:hidden text-black fas fa-sign-out-alt"></i>
+              <%= link "Sign out", to: Routes.pow_session_path(@conn, :delete), method: :delete, class: "pr-5 text-black lg:text-white font-bold" %>
+            </a>
+          </li>
+          <% end %>
+          <li class="flex items-center">
+            <a target="_blank" rel="noopener noreferrer"
+              class="lg:text-white lg:hover:text-gray-300 text-gray-800 px-3 py-4 lg:py-2 flex items-center text-xs uppercase font-bold"
+              href="https://github.com/Antonfogelberg/whackathon-platform"><i
+                class="text-black fab fa-github text-lg leading-lg"></i><span
+                class="lg:hidden inline-block ml-2">Github</span></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <%= @inner_content %>
+</body>
+<script>
+  function toggleNavbar(collapseID) {
+    document.getElementById(collapseID).classList.toggle("hidden");
+    document.getElementById(collapseID).classList.toggle("block");
+  }
+
+  function modalLogin() {
+    return {
+      state: 'CLOSED',
+      open() {
+        this.state = 'Transition'
+        setTimeOut(() => {
+          this.state = 'OPEN'
+        }, 50)
+      },
+      close() {
+        this.state = 'TRANSITION'
+        setTimeout(() => {
+          this.state = 'CLOSED'
+        }, 300)
+      },
+      isOpen() {
+        return this.state === 'OPEN'
+      },
+      isOpening() {
+        return this.state !== 'CLOSED'
+      },
+    }
+  }
+</script>
+
 </html>
