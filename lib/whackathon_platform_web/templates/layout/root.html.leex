@@ -33,10 +33,10 @@
         id="example-collapse-navbar">
         <ul class="flex flex-col lg:flex-row list-none lg:ml-auto">
           <%= if @current_user do %>
-          <li>
+          <li class="flex items-center">
             <a class=" text-lg font bold leading-relaxed whitespace-no-wrap px-3 py-1 text-white">
               <i class="lg:hidden text-black fas fa-sign-out-alt"></i>
-              <%= link "Sign out", to: Routes.pow_session_path(@conn, :delete), method: :delete, class: "pr-5 text-black lg:text-white" %>
+              <%= link "Sign out", to: Routes.pow_session_path(@conn, :delete), method: :delete, class: "pr-5 text-black lg:text-white font-bold" %>
             </a>
           </li>
           <% end %>
