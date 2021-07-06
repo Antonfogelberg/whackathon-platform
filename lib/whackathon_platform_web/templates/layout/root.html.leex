@@ -32,11 +32,19 @@
       <div class="lg:flex flex-grow items-center bg-white lg:bg-transparent lg:shadow-none hidden"
         id="example-collapse-navbar">
         <ul class="flex flex-col lg:flex-row list-none lg:ml-auto">
+          <%= if @current_user do %>
+          <li>
+            <a class=" text-lg font bold leading-relaxed whitespace-no-wrap px-3 py-1 text-white">
+              <i class="lg:hidden text-black fas fa-sign-out-alt"></i>
+              <%= link "Sign out", to: Routes.pow_session_path(@conn, :delete), method: :delete, class: "pr-5 text-black lg:text-white" %>
+            </a>
+          </li>
+          <% end %>
           <li class="flex items-center">
             <a target="_blank" rel="noopener noreferrer"
               class="lg:text-white lg:hover:text-gray-300 text-gray-800 px-3 py-4 lg:py-2 flex items-center text-xs uppercase font-bold"
               href="https://github.com/Antonfogelberg/whackathon-platform"><i
-                class="text-orange-500 fab fa-github text-lg leading-lg"></i><span
+                class="text-black fab fa-github text-lg leading-lg"></i><span
                 class="lg:hidden inline-block ml-2">Github</span></a>
           </li>
         </ul>
@@ -75,4 +83,5 @@
     }
   }
 </script>
+
 </html>
