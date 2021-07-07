@@ -1,4 +1,4 @@
-<div class="flex flex-row pt-20 px-20 bg-blue-800 min-h-screen">
+<div class="flex flex-row px-20">
   <div class="w-3/12">
     <figure class="bg-gray-100 rounded-xl mr-5">
       <img class="rounded-xl" src="<%= Routes.static_path(@conn, "/images/profile_picture_placeholder.png") %>" alt=""
@@ -39,7 +39,7 @@
         <% end %>
       </div>
       <%= if @current_user.email == @email do %>
-      <div class="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-center">
+      <div class="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-center p-5">
         <div class="rounded-md shadow">
           <a href="<%= Routes.pow_registration_path(@conn, :edit) %>"
             class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 md:py-4 md:text-lg md:px-10">
