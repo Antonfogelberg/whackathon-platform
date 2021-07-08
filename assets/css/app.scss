@@ -1,5 +1,9 @@
 /* This file is for your main application css. */
-@import "./phoenix.css";
+
+
+[x-cloak] {
+  display: none;
+}
 
 [x-cloak] {
   display: none;
