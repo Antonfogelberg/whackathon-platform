@@ -21,7 +21,12 @@ defmodule WhackathonPlatformWeb.Router do
 # Pow authentication
   pipeline :protected do
     plug Pow.Plug.RequireAuthenticated,
-      error_handler: Pow.Phoenix.PlugErrorHandler
+      error_handler: WhackathonPlatformWeb.AuthErrorHandler
+  end
+
+  pipeline :not_authenticated do
+    plug Pow.Plug.RequireNotAuthenticated,
+      error_handler: WhackathonPlatformWeb.AuthErrorHandler
   end
 
   pipeline :not_authenticated do
@@ -46,11 +51,24 @@ defmodule WhackathonPlatformWeb.Router do
   scope "/" do
     pipe_through :browser
 
-    pow_routes()
     pow_assent_routes()
     pow_extension_routes()
   end
 
+  scope "/", WhackathonPlatformWeb do
+    pipe_through :browser
+
+    get "/", PageController, :index
+  end
+
+  scope "/", WhackathonPlatformWeb do
+    pipe_through [:browser, :not_authenticated]
+
+    get "/signup", RegistrationController, :new, as: :signup
+    post "/signup", RegistrationController, :create, as: :signup
+    get "/login", SessionController, :new, as: :login
+    post "/login", SessionController, :create, as: :login
+  end
 
   scope "/", WhackathonPlatformWeb do
     pipe_through :browser
@@ -62,6 +80,7 @@ defmodule WhackathonPlatformWeb.Router do
   scope "/", WhackathonPlatformWeb do
     pipe_through [:browser, :protected]
 
+    delete "/logout", SessionController, :delete, as: :logout
     resources "/users", UserController, only: [:show]
   end
 

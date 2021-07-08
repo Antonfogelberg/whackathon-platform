@@ -1,19 +1,31 @@
-<div class="text-gray-300">
-<h1 class="text-4xl">Reset password</h1>
-</br>
-<%= form_for @changeset, @action, [as: :user], fn f -> %>
-  <%= if @changeset.action do %>
+<div class="absolute top-0 w-full h-full bg-top bg-cover" style="
+            background-image: url('https://images.unsplash.com/photo-1579548122080-c35fd6820ecb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3450&q=80');
+          ">
+<div class="flex flex-row text-black justify-center pt-20">
+  <div
+    class="flex flex-col rounded-lg p-5 shadow-lg w-3/12 items-center bg-gradient-to-tr from-yellow-400 via-red-500 to-pink-500">
+    <h1 class="text-4xl">Reset password</h1>
+    </br>
+    <%= form_for @changeset, @action, [as: :user], fn f -> %>
+    <%= if @changeset.action do %>
     <div class="alert alert-danger">
       <p>Oops, something went wrong! Please check the errors below.</p>
     </div>
-  <% end %>
+    <% end %>
 
-  <%= label f, :email %>
-  <%= text_input f, :email %>
-  <%= error_tag f, :email %>
+    <div>
+      <%= label f, :email %>
+      </br>
+      <%= text_input f, :email, class: "rounded-md" %>
+      <%= error_tag f, :email %>
+    </div>
 
-  <div>
-    <%= submit "Submit" %>
+    <div class="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-center p-5">
+    <div class="rounded-md shadow">
+      <%= submit "Submit", class: "w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 md:py-4 md:text-lg md:px-10" %>
+    </div>
+    </div>
+    <% end %>
   </div>
-<% end %>
+</div>
 </div>

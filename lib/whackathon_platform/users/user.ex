@@ -9,6 +9,7 @@ defmodule WhackathonPlatform.Users.User do
 
   schema "users" do
     field :username, :string
+    field :bio, :string
     pow_user_fields()
 
     timestamps()

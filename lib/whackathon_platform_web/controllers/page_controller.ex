@@ -2,6 +2,8 @@ defmodule WhackathonPlatformWeb.PageController do
   use WhackathonPlatformWeb, :controller
 
   def index(conn, _params) do
-    render(conn, "index.html")
+    conn
+    |> put_layout("appnostyling.html")
+    |> render("index.html")
   end
 end

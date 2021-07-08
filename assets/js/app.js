@@ -13,7 +13,7 @@ import "../css/app.scss";
 //     import socket from "./socket"
 //
 
-import { toggleNavbar } from "./helpers";
+import "./helpers";
 import "phoenix_html";
 import { Socket } from "phoenix";
 import topbar from "topbar";

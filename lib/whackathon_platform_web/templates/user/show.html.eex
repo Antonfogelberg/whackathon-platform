@@ -1,24 +1,56 @@
-<figure class="bg-gray-100 rounded-xl p-8 md:p-0">
-  <%# <img class="w-32 h-32 md:w-48 md:h-auto md:rounded-none rounded-full mx-auto" src="/sarah-dayan.jpg" alt="" width="384" height="512"> %>
-  <div class="pt-6 md:p-8 text-center space-y-4">
-      <p class="font-semibold">
-        “Tailwind CSS is the only framework that I've seen scale
-        on large teams. It’s easy to customize, adapts to any design,
-        and the build size is tiny.”
-      </p>
-    <figcaption class="font-medium">
-      <div class="text-cyan-600">
-        <%= @email %>
-        </br>
-        <%= @username %>
-        <%= if @current_user.email == @email do %>
-        </br>
-        <p>This is my own page</p>
+<div class="flex flex-row px-20">
+  <div class="w-3/12">
+    <figure class="bg-gray-100 rounded-xl mr-5">
+      <img class="rounded-xl" src="<%= Routes.static_path(@conn, "/images/profile_picture_placeholder.png") %>" alt=""
+        width="150" height="150" />
+      <div class="m-5">
+        <figcaption class="">
+          <div class="text-cyan-600">
+            <p class="text-5xl">
+              <%= @username %>
+            </p>
+            <%= if @current_user.email == @email do %>
+            <p>This is my own page</p>
+            <% end %>
+          </div>
+          <div class="text-gray-500">
+            Software Engineer, Whackathon Platform
+          </div>
+        </figcaption>
+        <p class="text-3xl">
+          Bio
+        </p>
+        <%= if @current_user.bio do %>
+        <p class="text-2xl text-gray-500">
+          <%= @current_user.bio %>
+        </p>
+        <% else %>
+        <p class="text-gray-500">
+          User currently has no biography
+        </p>
+        <p class="text-gray-500">
+          Creativity is a fucking work-ethic. Defy fucking convention.
+          If you don’t test your will against the dissent of the world,
+          it can never grow stronger. Never let your guard down by thinking
+          you’re fucking good enough. There is no right fucking answer. The
+          splendor of the mystery is that you don’t understand. Keep fucking
+          going.
+        </p>
         <% end %>
       </div>
-      <div class="text-gray-500">
-        Software Engineer, Whackathon Platform
+      <%= if @current_user.email == @email do %>
+      <div class="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-center p-5">
+        <div class="rounded-md shadow">
+          <a href="<%= Routes.pow_registration_path(@conn, :edit) %>"
+            class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 md:py-4 md:text-lg md:px-10">
+            Edit profile
+          </a>
+        </div>
       </div>
-    </figcaption>
+      <% end %>
+    </figure>
   </div>
-</figure>
+  <div class="flex flex-col ml-5 w-9/12">
+    <p>Lite text bara</p>
+  </div>
+</div>
