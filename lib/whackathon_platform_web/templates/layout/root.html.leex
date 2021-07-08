@@ -42,7 +42,7 @@
           <li class="flex items-center">
             <a class=" text-lg font bold leading-relaxed whitespace-no-wrap px-3 py-1 text-white">
               <i class="lg:hidden text-black fas fa-sign-out-alt"></i>
-              <%= link "Sign out", to: Routes.pow_session_path(@conn, :delete), method: :delete, class: "pr-5 text-black lg:text-white font-bold" %>
+              <%= link "Sign out", to: Routes.logout_path(@conn, :delete), method: :delete, class: "pr-5 text-black lg:text-white font-bold" %>
             </a>
           </li>
           <% end %>
