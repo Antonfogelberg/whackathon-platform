@@ -1,4 +1,7 @@
-<div class="flex flex-row text-black justify-center">
+<div class="absolute top-0 w-full h-full bg-top bg-cover" style="
+            background-image: url('https://images.unsplash.com/photo-1579548122080-c35fd6820ecb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3450&q=80');
+          ">
+<div class="flex flex-row text-black justify-center pt-20">
   <div
     class="flex flex-col rounded-lg p-5 shadow-lg w-3/12 items-center bg-gradient-to-tr from-yellow-400 via-red-500 to-pink-500">
     <h1 class="text-4xl">Reset password</h1>
@@ -24,4 +27,5 @@
     </div>
     <% end %>
   </div>
+</div>
 </div>
