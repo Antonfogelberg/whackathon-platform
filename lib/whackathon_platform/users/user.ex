@@ -10,6 +10,7 @@ defmodule WhackathonPlatform.Users.User do
   schema "users" do
     field :username, :string
     field :bio, :string
+    field :admin, :boolean, null: false, default: false
     pow_user_fields()
 
     timestamps()
@@ -19,8 +20,8 @@ defmodule WhackathonPlatform.Users.User do
     user_or_changeset
     |> pow_changeset(attrs)
     |> pow_extension_changeset(attrs)
-    |> cast(attrs, [:username])
-    |> validate_required([:username])
+    |> cast(attrs, [:username, :admin])
+    |> validate_required([:username, :admin])
     |> unique_constraint(:username)
   end
 end

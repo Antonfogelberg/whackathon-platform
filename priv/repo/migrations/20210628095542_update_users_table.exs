@@ -5,6 +5,7 @@ defmodule WhackathonPlatform.Repo.Migrations.UpdateUsersTable do
     alter table(:users) do
       add :username, :string
       add :bio, :string
+      add :admin, :boolean, null: false, default: false
     end
   end
 end
