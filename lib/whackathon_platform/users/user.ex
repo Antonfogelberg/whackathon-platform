@@ -2,6 +2,7 @@ defmodule WhackathonPlatform.Users.User do
   use Ecto.Schema
   use Pow.Ecto.Schema
   use PowAssent.Ecto.Schema
+
   use Pow.Extension.Ecto.Schema,
     extensions: [PowResetPassword]
 
@@ -9,6 +10,7 @@ defmodule WhackathonPlatform.Users.User do
 
   schema "users" do
     field :username, :string
+    field :event_id, :id
     field :bio, :string
     field :admin, :boolean, null: false, default: false
     pow_user_fields()

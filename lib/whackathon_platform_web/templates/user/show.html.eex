@@ -11,6 +11,9 @@
             </p>
             <%= if @current_user.email == @email do %>
             <p>This is my own page</p>
+            <%= if @current_user.admin do %>
+            <p> Jag är en admin</p>
+            <% end %>
             <% end %>
           </div>
           <div class="text-gray-500">
