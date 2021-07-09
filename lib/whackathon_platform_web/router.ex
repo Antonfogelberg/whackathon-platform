@@ -2,6 +2,7 @@ defmodule WhackathonPlatformWeb.Router do
   use WhackathonPlatformWeb, :router
   use Pow.Phoenix.Router
   use PowAssent.Phoenix.Router
+
   use Pow.Extension.Phoenix.Router,
     extensions: [PowResetPassword]
 
@@ -18,7 +19,7 @@ defmodule WhackathonPlatformWeb.Router do
     plug :accepts, ["json"]
   end
 
-# Pow authentication
+  # Pow authentication
   pipeline :protected do
     plug Pow.Plug.RequireAuthenticated,
       error_handler: WhackathonPlatformWeb.AuthErrorHandler
@@ -29,12 +30,7 @@ defmodule WhackathonPlatformWeb.Router do
       error_handler: WhackathonPlatformWeb.AuthErrorHandler
   end
 
-  pipeline :not_authenticated do
-    plug Pow.Plug.RequireNotAuthenticated,
-      error_handler: Pow.Phoenix.PlugErrorHandler
-  end
-
-# PowAssent for github login
+  # PowAssent for github login
   pipeline :skip_csrf_protection do
     plug :accepts, ["html"]
     plug :fetch_session
@@ -69,13 +65,6 @@ defmodule WhackathonPlatformWeb.Router do
     get "/login", SessionController, :new, as: :login
     post "/login", SessionController, :create, as: :login
   end
-
-  scope "/", WhackathonPlatformWeb do
-    pipe_through :browser
-
-    get "/", PageController, :index
-  end
-
 
   scope "/", WhackathonPlatformWeb do
     pipe_through [:browser, :protected]
