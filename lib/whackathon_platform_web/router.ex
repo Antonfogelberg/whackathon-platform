@@ -71,6 +71,7 @@ defmodule WhackathonPlatformWeb.Router do
 
     delete "/logout", SessionController, :delete, as: :logout
     resources "/users", UserController, only: [:show]
+    resources "/events", EventController
   end
 
   # Other scopes may use custom stacks.
