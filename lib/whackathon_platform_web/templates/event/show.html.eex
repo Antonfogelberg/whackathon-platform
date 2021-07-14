@@ -1,0 +1,43 @@
+<div class="absolute top-0 w-full h-full bg-top bg-cover" style="
+            background-image: url('https://images.unsplash.com/photo-1579548122080-c35fd6820ecb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3450&q=80');
+          ">
+  <div class="flex flex-row text-black justify-center pt-20">
+
+    <div class="flex flex-col rounded-lg p-5 shadow-lg w-2/3 bg-gradient-to-tr from-yellow-400 via-red-500 to-pink-500">
+
+      <!-- Event name -->
+      <div class="flex justify-center">
+        <h1 class="font-bold text-lg uppercase text-white"><%= @event.name %></h1>
+      </div>
+      <!-- theme -->
+      <div class="">
+        <h2><%= @event.theme %>
+      </div>
+      <!-- event description -->
+      <div class="flex justify-center">
+        <p><%= @event.description %></p>
+      </div>
+
+      <!-- Dates -->
+      <div class="flex justify-end pr-5">
+        <p> Dates </p>
+        <br>
+        <%= @event.start_time.year %>-<%= @event.start_time.month %>-<%= @event.start_time.day %>
+        <br>
+        <%= @event.end_time %>
+
+      </div>
+
+      <%= if @current_user.admin do %>
+      <div class="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-center p-5">
+        <div class="rounded-md shadow">
+          <a href="<%= Routes.event_path(@conn, :edit, @event.id) %>"
+            class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 md:py-4 md:text-lg md:px-10">
+           Edit event
+          </a>
+        </div>
+      </div>
+      <% end %>
+
+    </div>
+  </div>

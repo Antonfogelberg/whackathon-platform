@@ -11,6 +11,9 @@
             </p>
             <%= if @current_user.email == @email do %>
             <p>This is my own page</p>
+            <%= if @current_user.admin do %>
+            <p> Jag är en admin</p>
+            <% end %>
             <% end %>
           </div>
           <div class="text-gray-500">
@@ -52,5 +55,15 @@
   </div>
   <div class="flex flex-col ml-5 w-9/12">
     <p>Lite text bara</p>
+    <%= if @current_user.admin do %>
+    <div class="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-center p-5">
+      <div class="rounded-md shadow">
+        <a href="<%= Routes.event_path(@conn, :new) %>"
+          class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 md:py-4 md:text-lg md:px-10">
+          Create event
+        </a>
+      </div>
+    </div>
+    <% end %>
   </div>
 </div>
