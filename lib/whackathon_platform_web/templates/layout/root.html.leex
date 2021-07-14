@@ -29,8 +29,14 @@
           <i class="text-white fas fa-bars"></i>
         </button>
       </div>
-      <div class="lg:flex flex-grow items-center bg-white lg:bg-transparent lg:shadow-none hidden"
+
+      <div class="lg:flex flex-grow items-center bg-white lg:bg-transparent  hidden"
         id="example-collapse-navbar">
+          <a
+            class="ring-4 lg:ml-auto text-sm font-bold uppercase lg:text-white md:text-black border border-transparent lg:bg-indigo-600 lg:hover:bg-indigo-700 md:py-2 md:px-6 lg:rounded-full">
+            <i class="hidden md:block far fa-calendar-alt"></i>
+            <%= link "Events", to: Routes.event_path(@conn, :index) %>
+          </a>
         <ul class="flex flex-col lg:flex-row list-none lg:ml-auto">
           <%= if @current_user do %>
           <li class="flex items-center">

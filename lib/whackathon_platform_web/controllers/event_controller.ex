@@ -10,6 +10,7 @@ defmodule WhackathonPlatformWeb.EventController do
         Event
         |> Repo.get_by!(id: id)
         |> Repo.preload(:attendee)
+
       render(conn, "show.html", event: event)
     rescue
       _error in Ecto.NoResultsError ->
@@ -52,6 +53,10 @@ defmodule WhackathonPlatformWeb.EventController do
     conn
     |> assign(:action, "/events")
     |> render("new.html", changeset: changeset)
+  end
 
+  def index(conn, _params) do
+    events = Repo.all(Event)
+    render(conn, "index.html", events: events)
   end
 end
