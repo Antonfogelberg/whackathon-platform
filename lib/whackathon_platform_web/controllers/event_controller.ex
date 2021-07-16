@@ -59,4 +59,54 @@ defmodule WhackathonPlatformWeb.EventController do
     events = Repo.all(Event)
     render(conn, "index.html", events: events)
   end
+
+  def get_month(month) do
+    case month do
+      1 ->
+        "Jan"
+      2 ->
+        "Feb"
+      3 ->
+        "Mar"
+      4 ->
+        "Apr"
+      5 ->
+        "May"
+      6 ->
+        "Jun"
+      7 ->
+        "Jul"
+      8 ->
+        "Aug"
+      9 ->
+        "Sep"
+      10 ->
+        "Oct"
+      11 ->
+        "Nov"
+      12 ->
+        "Dec"
+      _ ->
+        ""
+    end
+  end
+
+  def get_day_of_week(day) do
+    case day do
+      1 ->
+        "Mon"
+      2 ->
+        "Tue"
+      3 ->
+        "Wed"
+      4 ->
+        "Thu"
+      5 ->
+        "Fri"
+      6 ->
+        "Sat"
+      7 ->
+        "Sun"
+    end
+  end
 end

@@ -7,25 +7,66 @@
 
       <!-- Event name -->
       <div class="flex justify-center">
-        <h1 class="font-bold text-lg uppercase text-white"><%= @event.name %></h1>
+        <h1 class="font-bold text-4xl uppercase text-white"><%= @event.name %></h1>
       </div>
       <!-- theme -->
-      <div class="">
-        <h2><%= @event.theme %>
+      <div class="py-5">
+        <h2 class="font-bold text-xl uppercase text-white">Theme</h2>
+        <h2 class="text-lg"><%= @event.theme %></h2>
       </div>
       <!-- event description -->
-      <div class="flex justify-center">
+      <div class="py-5">
+        <h2 class="font-bold text-xl uppercase text-white">Description</h2>
         <p><%= @event.description %></p>
       </div>
 
       <!-- Dates -->
-      <div class="flex justify-end pr-5">
+      <!-- <div class="flex justify-end pr-5">
         <p> Dates </p>
         <br>
         <%= @event.start_time.year %>-<%= @event.start_time.month %>-<%= @event.start_time.day %>
         <br>
         <%= @event.end_time %>
 
+      </div> -->
+
+      <!-- Dates -->
+      <div class="flex flex-row justify-between py-5">
+        <!-- Start date -->
+        <div>
+          <h2 class="text-xl">Start date</h2>
+          <div class="block rounded-t overflow-hidden bg-white text-center w-24">
+            <div class="bg-red-600 text-white py-1">
+              <%= WhackathonPlatformWeb.EventController.get_month(@event.start_time.month) %>
+            </div>
+            <div class="pt-1 border-l border-r">
+              <span class="text-4xl font-bold"><%= @event.start_time.day %></span>
+            </div>
+            <div class="pb-2 px-2 border-l border-r border-b rounded-b flex justify-between">
+              <span
+                class="text-xs font-bold"><%= Date.day_of_week(@event.start_time) |> WhackathonPlatformWeb.EventController.get_day_of_week() %></span>
+              <span class="text-xs font-bold"><%= @event.start_time.year %></span>
+            </div>
+          </div>
+        </div>
+
+        <!-- End date -->
+        <div>
+          <h2 class="text-xl">End date</h2>
+          <div class="block rounded-t overflow-hidden bg-white text-center w-24">
+            <div class="bg-red-600 text-white py-1">
+              <%= WhackathonPlatformWeb.EventController.get_month(@event.end_time.month) %>
+            </div>
+            <div class="pt-1 border-l border-r">
+              <span class="text-4xl font-bold"><%= @event.end_time.day %></span>
+            </div>
+            <div class="pb-2 px-2 border-l border-r border-b rounded-b flex justify-between">
+              <span
+                class="text-xs font-bold"><%= Date.day_of_week(@event.end_time) |> WhackathonPlatformWeb.EventController.get_day_of_week() %></span>
+              <span class="text-xs font-bold"><%= @event.end_time.year %></span>
+            </div>
+          </div>
+        </div>
       </div>
 
       <%= if @current_user.admin do %>
@@ -33,7 +74,7 @@
         <div class="rounded-md shadow">
           <a href="<%= Routes.event_path(@conn, :edit, @event.id) %>"
             class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 md:py-4 md:text-lg md:px-10">
-           Edit event
+            Edit event
           </a>
         </div>
       </div>
