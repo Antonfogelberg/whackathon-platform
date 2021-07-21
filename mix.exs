@@ -10,7 +10,8 @@ defmodule WhackathonPlatform.MixProject do
       compilers: [:phoenix, :gettext] ++ Mix.compilers(),
       start_permanent: Mix.env() == :prod,
       aliases: aliases(),
-      deps: deps()
+      deps: deps(),
+      releases: releases()
     ]
   end
 
@@ -64,6 +65,19 @@ defmodule WhackathonPlatform.MixProject do
       "ecto.setup": ["ecto.create", "ecto.migrate", "run priv/repo/seeds.exs"],
       "ecto.reset": ["ecto.drop", "ecto.setup"],
       test: ["ecto.create --quiet", "ecto.migrate --quiet", "test"]
+    ]
+  end
+
+  defp releases do
+    [
+      whack: [
+        applications: [whackathon_platform: :permanent],
+        # include_executables_for: [:unix],
+        include_erts: true,
+        strip_beams: true,
+        quiet: false,
+        steps: [:assemble, :tar],
+      ]
     ]
   end
 end
