@@ -44,6 +44,10 @@
                       <span class="text-xs font-bold"><%= event.start_time.year %></span>
                     </div>
                   </div>
+                  <div class="text-white">
+                    <i class="far fa-clock"></i>
+                    <span><%= WhackathonPlatformWeb.EventController.get_formatted_time(event.start_time.hour) %>:<%= WhackathonPlatformWeb.EventController.get_formatted_time(event.start_time.minute) %></span>
+                  </div>
                 </div>
                 <!-- End date -->
                 <div class="mx-5">
@@ -60,6 +64,10 @@
                         class="text-xs font-bold"><%= Date.day_of_week(event.end_time) |> WhackathonPlatformWeb.EventController.get_day_of_week() %></span>
                       <span class="text-xs font-bold"><%= event.end_time.year %></span>
                     </div>
+                  </div>
+                  <div class="text-white">
+                    <i class="far fa-clock"></i>
+                    <span><%= WhackathonPlatformWeb.EventController.get_formatted_time(event.end_time.hour) %>:<%= WhackathonPlatformWeb.EventController.get_formatted_time(event.end_time.minute) %></span>
                   </div>
                 </div>
               </div>
