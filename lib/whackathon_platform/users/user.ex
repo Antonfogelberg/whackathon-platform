@@ -23,7 +23,7 @@ defmodule WhackathonPlatform.Users.User do
     user_or_changeset
     |> pow_changeset(attrs)
     |> pow_extension_changeset(attrs)
-    |> cast(attrs, [:username, :admin])
+    |> cast(attrs, [:username, :admin, :bio, :profile_pic])
     |> validate_required([:username, :admin])
     |> unique_constraint(:username)
   end

@@ -35,6 +35,13 @@
       <%= password_input f, :current_password %>
       <%= error_tag f, :current_password %>
     </div>
+
+    <div>
+    <%= label f, :bio %>
+    </br>
+    <%= textarea f, :bio, class: "w-3/12 h-40" %>
+    <%= error_tag f, :bio %>
+    </div>
   </div>
 
   <div class="mt-5 sm:mt-8 sm:flex">
