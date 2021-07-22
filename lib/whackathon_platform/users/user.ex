@@ -13,6 +13,7 @@ defmodule WhackathonPlatform.Users.User do
     field :event_id, :id
     field :bio, :string
     field :admin, :boolean, null: false, default: false
+    field :profile_pic, :binary
     pow_user_fields()
 
     timestamps()
