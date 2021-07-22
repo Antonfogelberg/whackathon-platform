@@ -10,6 +10,7 @@ defmodule WhackathonPlatformWeb.EventController do
         Event
         |> Repo.get_by!(id: id)
         |> Repo.preload(:attendee)
+
       render(conn, "show.html", event: event)
     rescue
       _error in Ecto.NoResultsError ->
@@ -52,6 +53,87 @@ defmodule WhackathonPlatformWeb.EventController do
     conn
     |> assign(:action, "/events")
     |> render("new.html", changeset: changeset)
-
   end
+
+  def index(conn, _params) do
+    events = Repo.all(Event)
+    render(conn, "index.html", events: events)
+  end
+
+  def get_month(month) do
+    case month do
+      1 ->
+        "Jan"
+      2 ->
+        "Feb"
+      3 ->
+        "Mar"
+      4 ->
+        "Apr"
+      5 ->
+        "May"
+      6 ->
+        "Jun"
+      7 ->
+        "Jul"
+      8 ->
+        "Aug"
+      9 ->
+        "Sep"
+      10 ->
+        "Oct"
+      11 ->
+        "Nov"
+      12 ->
+        "Dec"
+      _ ->
+        ""
+    end
+  end
+
+  def get_day_of_week(day) do
+    case day do
+      1 ->
+        "Mon"
+      2 ->
+        "Tue"
+      3 ->
+        "Wed"
+      4 ->
+        "Thu"
+      5 ->
+        "Fri"
+      6 ->
+        "Sat"
+      7 ->
+        "Sun"
+    end
+  end
+
+def get_formatted_time(time) do
+  case time do
+    0 ->
+      "00"
+    1 ->
+      "01"
+    2 ->
+      "02"
+    3 ->
+      "03"
+    4 ->
+      "04"
+    5 ->
+      "05"
+    6 ->
+      "06"
+    7 ->
+      "07"
+    8 ->
+      "08"
+    9 ->
+      "09"
+    _ ->
+      time
+  end
+end
 end
