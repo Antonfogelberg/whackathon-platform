@@ -7,11 +7,11 @@
         <figcaption class="">
           <div class="text-cyan-600">
             <p class="text-5xl">
-              <%= @username %>
+              <%= @user.username %>
             </p>
-            <%= if @current_user.email == @email do %>
+            <%= if @current_user.email == @user.email do %>
             <p>This is my own page</p>
-            <%= if @current_user.admin do %>
+            <%= if @user.admin do %>
             <p> Jag är en admin</p>
             <% end %>
             <% end %>
@@ -23,9 +23,9 @@
         <p class="text-3xl">
           Bio
         </p>
-        <%= if @current_user.bio do %>
+        <%= if @user.bio do %>
         <p class="text-2xl text-gray-500">
-          <%= @current_user.bio %>
+          <%= @user.bio %>
         </p>
         <% else %>
         <p class="text-gray-500">
@@ -41,7 +41,7 @@
         </p>
         <% end %>
       </div>
-      <%= if @current_user.email == @email do %>
+      <%= if @current_user.email == @user.email do %>
       <div class="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-center p-5">
         <div class="rounded-md shadow">
           <a href="<%= Routes.pow_registration_path(@conn, :edit) %>"

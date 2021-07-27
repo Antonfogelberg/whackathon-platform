@@ -1,7 +1,7 @@
 <div class="px-20">
   <h1 class="text-4xl">Edit profile</h1>
 
-  <%= form_for @changeset, @action, [as: :user], fn f -> %>
+  <%= form_for @changeset, @action, [as: :user, multipart: true], fn f -> %>
   <%= if @changeset.action do %>
   <div class="alert alert-danger">
     <p>Oops, something went wrong! Please check the errors below.</p>
@@ -9,6 +9,11 @@
   <% end %>
 
   <div class="flex flex-col py-5 justify-evenly space-y-5">
+    <div>
+      <%= label f, "Profile picture" %>
+      <%= file_input f, :profile_pic %>
+      <%= error_tag f, :profile_pic %>
+    </div>
     <div>
       <%= label f, Pow.Ecto.Schema.user_id_field(@changeset) %>
       </br>
@@ -34,6 +39,13 @@
       </br>
       <%= password_input f, :current_password %>
       <%= error_tag f, :current_password %>
+    </div>
+
+    <div>
+      <%= label f, :bio %>
+      </br>
+      <%= textarea f, :bio, class: "w-3/12 h-40" %>
+      <%= error_tag f, :bio %>
     </div>
   </div>
 

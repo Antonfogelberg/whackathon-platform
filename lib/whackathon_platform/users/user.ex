@@ -13,6 +13,7 @@ defmodule WhackathonPlatform.Users.User do
     field :event_id, :id
     field :bio, :string
     field :admin, :boolean, null: false, default: false
+    field :profile_pic, :binary
     pow_user_fields()
 
     timestamps()
@@ -22,7 +23,7 @@ defmodule WhackathonPlatform.Users.User do
     user_or_changeset
     |> pow_changeset(attrs)
     |> pow_extension_changeset(attrs)
-    |> cast(attrs, [:username, :admin])
+    |> cast(attrs, [:username, :admin, :bio, :profile_pic])
     |> validate_required([:username, :admin])
     |> unique_constraint(:username)
   end
