@@ -8,6 +8,7 @@ defmodule WhackathonPlatform.Project do
   schema "projects" do
     field :description, :string
     field :title, :string
+    field :github_link, :string
     belongs_to :user, User
 
     timestamps()
@@ -26,7 +27,7 @@ defmodule WhackathonPlatform.Project do
   """
   def changeset(project, attrs \\ %{}) do
     project
-    |> cast(attrs, [:title, :description, :user_id])
+    |> cast(attrs, [:title, :description, :user_id, :github_link])
     |> validate_required([:title, :description, :user_id])
   end
 end

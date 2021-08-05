@@ -5,6 +5,7 @@ defmodule WhackathonPlatform.Repo.Migrations.CreateProjects do
     create table(:projects, primary_key: true) do
       add :title, :string
       add :description, :text
+      add :github_link, :string
       add :user_id, references(:users, on_delete: :delete_all)
 
       timestamps()

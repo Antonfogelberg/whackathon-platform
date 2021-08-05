@@ -13,11 +13,24 @@ defmodule WhackathonPlatformWeb.ProjectController do
   def create(conn, %{"project" => project_params, "user_id" => user_id}) do
     title = project_params["title"]
     description = project_params["description"]
+    github_link = project_params["github_link"]
     user = Repo.get!(User, user_id)
-    project_changeset = Ecto.build_assoc(user, :projects, title: title, description: description)
-    Repo.insert!(project_changeset)
+    project =
+      Ecto.build_assoc(user, :projects, title: title, description: description, github_link: github_link)
+      |> Project.changeset()
+      |> Repo.insert()
 
-    conn
-    |> redirect(to: Routes.user_path(conn, :show, user.username))
+    case project do
+      {:ok, _project} ->
+        conn
+        |> redirect(to: Routes.user_path(conn, :show, user.username))
+      {:error, changeset} ->
+        conn
+        |> assign(:project_changeset, changeset)
+        |> redirect(to: Routes.user_path(conn, :show, user.username))
+    end
+
+    # conn
+    # |> redirect(to: Routes.user_path(conn, :show, user.username))
   end
 end

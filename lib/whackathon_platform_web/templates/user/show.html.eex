@@ -58,7 +58,8 @@
       <%= if @current_user.id == @user.id do %>
       <div class="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-center p-5">
         <div class="rounded-md shadow">
-          <button x-on:click="open = !open" class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 md:py-4 md:text-lg md:px-10">
+          <button x-on:click="open = !open"
+            class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 md:py-4 md:text-lg md:px-10">
             Create new project
           </button>
         </div>
@@ -83,6 +84,15 @@
             <h2 class="font-bold text-xl uppercase">Description</h2>
             <p><%= project.description %></p>
           </div>
+
+          <!-- Github link -->
+          <%= if project.github_link do %>
+          <div class="text-white">
+            <a href="<%= project.github_link %>" target="_blank" rel="noopener noreferrer">
+              <i class="text-4xl fab fa-github"></i>
+            </a>
+          </div>
+          <% end %>
 
         </div>
       </li>

@@ -105,13 +105,15 @@ Repo.insert!(%Event{
   %{
       title: "Is this your card generator",
     description: "Generates a card for you to decide if it was your card or not",
-    user_id: 1
+    user_id: 1,
+    github_link: "https://vecka.nu/"
   },
 
   %{
     title: "RNG Dice",
     description: "Truly fair randomly generated dice rolls. Supports all common types of dice",
-    user_id: 2
+    user_id: 2,
+    github_link: "https://klockren.nu/"
   },
 
   %{
