@@ -54,18 +54,41 @@
     </figure>
   </div>
   <div class="flex flex-col ml-5 w-9/12">
-    <%= if @current_user.id == @user.id do %>
-    <%= render(WhackathonPlatformWeb.ProjectView, "new.html", conn: @conn, user: @current_user, project_changeset: @project_changeset) %>
-    <% end %>
+    <div x-data="{open: false}">
+      <%= if @current_user.id == @user.id do %>
+      <div class="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-center p-5">
+        <div class="rounded-md shadow">
+          <button x-on:click="open = !open" class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 md:py-4 md:text-lg md:px-10">
+            Create new project
+          </button>
+        </div>
+      </div>
+      <div x-show="open">
+        <%= render(WhackathonPlatformWeb.ProjectView, "new.html", conn: @conn, user: @current_user, project_changeset: @project_changeset) %>
+      </div>
+      <% end %>
+    </div>
     <ul>
       <%= for project <- @user.projects do %>
-      <li>
-        <%= project.title %>
+      <li class="pt-4">
+        <div class="flex flex-col rounded-lg p-5 shadow-lg bg-gradient-to-tr from-black via-indigo-500 to-blue-500">
+
+          <!-- Project title -->
+          <div class="flex justify-center">
+            <h1 class="font-bold text-4xl uppercase text-white"><%= project.title %></h1>
+          </div>
+
+          <!-- Project description -->
+          <div class="py-5 text-white">
+            <h2 class="font-bold text-xl uppercase">Description</h2>
+            <p><%= project.description %></p>
+          </div>
+
+        </div>
       </li>
       <% end %>
     </ul>
-    <p>Lite text bara</p>
-    <%= if @current_user.admin do %>
+    <%= if @current_user.id == @user.id && @current_user.admin do %>
     <div class="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-center p-5">
       <div class="rounded-md shadow">
         <a href="<%= Routes.event_path(@conn, :new) %>"

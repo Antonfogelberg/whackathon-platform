@@ -118,6 +118,18 @@ Repo.insert!(%Event{
     title: "Game Boy emulator",
     description: "Play all your favorite childhood games with this optimized, high performance beast of an emulator.",
     user_id: 3
+  },
+
+  %{
+    title: "RNG Dice",
+    description: "Truly fair randomly generated dice rolls. Supports all common types of dice",
+    user_id: 1
+  },
+
+  %{
+    title: "Game Boy emulator",
+    description: "Play all your favorite childhood games with this optimized, high performance beast of an emulator.",
+    user_id: 1
   }
 ]
 |> Enum.map(fn attrs ->
