@@ -9,7 +9,7 @@
             <p class="text-5xl">
               <%= @user.username %>
             </p>
-            <%= if @current_user.email == @user.email do %>
+            <%= if @current_user.id == @user.id do %>
             <p>This is my own page</p>
             <%= if @user.admin do %>
             <p> Jag är en admin</p>
@@ -41,7 +41,7 @@
         </p>
         <% end %>
       </div>
-      <%= if @current_user.email == @user.email do %>
+      <%= if @current_user.id == @user.id do %>
       <div class="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-center p-5">
         <div class="rounded-md shadow">
           <a href="<%= Routes.pow_registration_path(@conn, :edit) %>"
@@ -54,6 +54,16 @@
     </figure>
   </div>
   <div class="flex flex-col ml-5 w-9/12">
+    <%= if @current_user.id == @user.id do %>
+    <%= render(WhackathonPlatformWeb.ProjectView, "new.html", conn: @conn, user: @current_user, project_changeset: @project_changeset) %>
+    <% end %>
+    <ul>
+      <%= for project <- @user.projects do %>
+      <li>
+        <%= project.title %>
+      </li>
+      <% end %>
+    </ul>
     <p>Lite text bara</p>
     <%= if @current_user.admin do %>
     <div class="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-center p-5">

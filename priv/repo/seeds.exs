@@ -101,17 +101,27 @@ Repo.insert!(%Event{
   start_time: DateTime.new!(~D[2021-09-17], ~T[16:00:00], "Etc/UTC"),
   end_time: DateTime.new!(~D[2021-09-18], ~T[16:00:00], "Etc/UTC")})
 
-Repo.insert!(%Project{
-  title: "Is this your card generator",
-  description: "Generates a card for you to decide if it was your card or not"
-})
+[
+  %{
+      title: "Is this your card generator",
+    description: "Generates a card for you to decide if it was your card or not",
+    user_id: 1
+  },
 
-Repo.insert!(%Project{
-  title: "RNG Dice",
-  description: "Truly fair randomly generated dice rolls. Supports all common types of dice"
-})
+  %{
+    title: "RNG Dice",
+    description: "Truly fair randomly generated dice rolls. Supports all common types of dice",
+    user_id: 2
+  },
 
-Repo.insert!(%Project{
-  title: "Game Boy emulator",
-  description: "Play all your favorite childhood games with this optimized, high performance beast of an emulator."
-})
+  %{
+    title: "Game Boy emulator",
+    description: "Play all your favorite childhood games with this optimized, high performance beast of an emulator.",
+    user_id: 3
+  }
+]
+|> Enum.map(fn attrs ->
+  attrs
+  |> Project.new()
+  |> Repo.insert!()
+  end)

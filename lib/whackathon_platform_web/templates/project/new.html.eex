@@ -1,0 +1,24 @@
+<h2>Add a new project</h2>
+
+<%= form_for @project_changeset, Routes.user_project_path(@conn, :create, @user), fn f -> %>
+<div class="bg-white">
+  <div>
+    <%= label f, :title %>
+    <%= text_input f, :title %>
+    <%= error_tag f, :title %>
+  </div>
+
+  <div>
+    <%= label f, :description %>
+    <%= text_input f, :description %>
+    <%= error_tag f, :description %>
+  </div>
+</div>
+
+<div class="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-center p-5">
+  <div class="rounded-md shadow">
+    <%= submit "Submit", class: "w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 md:py-4 md:text-lg md:px-10" %>
+  </div>
+</div>
+
+<% end %>
