@@ -9,12 +9,6 @@
             <p class="text-5xl">
               <%= @user.username %>
             </p>
-            <%= if @current_user.id == @user.id do %>
-            <p>This is my own page</p>
-            <%= if @user.admin do %>
-            <p> Jag är en admin</p>
-            <% end %>
-            <% end %>
           </div>
           <div class="text-gray-500">
             Software Engineer, Whackathon Platform
@@ -31,14 +25,6 @@
         <p class="text-gray-500">
           User currently has no biography
         </p>
-        <p class="text-gray-500">
-          Creativity is a fucking work-ethic. Defy fucking convention.
-          If you don’t test your will against the dissent of the world,
-          it can never grow stronger. Never let your guard down by thinking
-          you’re fucking good enough. There is no right fucking answer. The
-          splendor of the mystery is that you don’t understand. Keep fucking
-          going.
-        </p>
         <% end %>
       </div>
       <%= if @current_user.id == @user.id do %>
@@ -47,6 +33,16 @@
           <a href="<%= Routes.pow_registration_path(@conn, :edit) %>"
             class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 md:py-4 md:text-lg md:px-10">
             Edit profile
+          </a>
+        </div>
+      </div>
+      <% end %>
+      <%= if @current_user.id == @user.id && @current_user.admin do %>
+      <div class="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-center p-5">
+        <div class="rounded-md shadow">
+          <a href="<%= Routes.event_path(@conn, :new) %>"
+            class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 md:py-4 md:text-lg md:px-10">
+            Create event
           </a>
         </div>
       </div>
@@ -98,15 +94,5 @@
       </li>
       <% end %>
     </ul>
-    <%= if @current_user.id == @user.id && @current_user.admin do %>
-    <div class="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-center p-5">
-      <div class="rounded-md shadow">
-        <a href="<%= Routes.event_path(@conn, :new) %>"
-          class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 md:py-4 md:text-lg md:px-10">
-          Create event
-        </a>
-      </div>
-    </div>
-    <% end %>
   </div>
 </div>
