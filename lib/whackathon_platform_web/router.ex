@@ -70,7 +70,12 @@ defmodule WhackathonPlatformWeb.Router do
     pipe_through [:browser, :protected]
 
     delete "/logout", SessionController, :delete, as: :logout
-    resources "/users", UserController, only: [:show]
+
+    resources "/users", UserController, only: [:show] do
+      resources "/projects", ProjectController, only: [:create, :show]
+    end
+
+    resources "/projects", ProjectController, only: [:index]
     resources "/events", EventController
   end
 

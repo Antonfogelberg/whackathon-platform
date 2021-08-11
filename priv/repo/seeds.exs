@@ -13,6 +13,7 @@
 alias WhackathonPlatform.Repo
 alias WhackathonPlatform.Users.User
 alias WhackathonPlatform.Event
+alias WhackathonPlatform.Project
 
 
 # Setting up some test users. One admin
@@ -99,3 +100,42 @@ Repo.insert!(%Event{
   description: "Det fantastiska språket som möjliggjorde denna sida",
   start_time: DateTime.new!(~D[2021-09-17], ~T[16:00:00], "Etc/UTC"),
   end_time: DateTime.new!(~D[2021-09-18], ~T[16:00:00], "Etc/UTC")})
+
+[
+  %{
+      title: "Is this your card generator",
+    description: "Generates a card for you to decide if it was your card or not",
+    user_id: 1,
+    github_link: "https://vecka.nu/"
+  },
+
+  %{
+    title: "RNG Dice",
+    description: "Truly fair randomly generated dice rolls. Supports all common types of dice",
+    user_id: 2,
+    github_link: "https://klockren.nu/"
+  },
+
+  %{
+    title: "Game Boy emulator",
+    description: "Play all your favorite childhood games with this optimized, high performance beast of an emulator.",
+    user_id: 3
+  },
+
+  %{
+    title: "RNG Dice",
+    description: "Truly fair randomly generated dice rolls. Supports all common types of dice",
+    user_id: 1
+  },
+
+  %{
+    title: "Game Boy emulator",
+    description: "Play all your favorite childhood games with this optimized, high performance beast of an emulator.",
+    user_id: 1
+  }
+]
+|> Enum.map(fn attrs ->
+  attrs
+  |> Project.new()
+  |> Repo.insert!()
+  end)

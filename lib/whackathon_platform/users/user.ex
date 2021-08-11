@@ -8,6 +8,8 @@ defmodule WhackathonPlatform.Users.User do
 
   import Ecto.Changeset
 
+  alias WhackathonPlatform.Project
+
   schema "users" do
     field :username, :string
     field :event_id, :id
@@ -15,6 +17,7 @@ defmodule WhackathonPlatform.Users.User do
     field :admin, :boolean, null: false, default: false
     field :profile_pic, :binary
     pow_user_fields()
+    has_many :projects, Project
 
     timestamps()
   end
